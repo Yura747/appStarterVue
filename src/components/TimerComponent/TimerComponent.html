@@ -1,0 +1,36 @@
+
+<div class="timer-component">
+    <div class="timer-component__timers-header">
+        <form class="timer-component__timers-form" @submit.prevent="createTimer()">
+            <input type="text" v-model="timerName" class="c-input c-input--bg-gray timer-component__timers-input" placeholder="Timer Name">
+            <Button class="c-button c-button--orange timer-component__timers-btn">
+                Create Timer
+            </Button>
+        </form>
+    </div>
+    <div class="timer-component__timers">
+        <div v-for="(timer, index) in timers" :key="index" class="timer-component__timer-container">
+            <div class="timer-component__timer-name-container">
+                <span class="timer-component__timer-name">{{ timer.name }}</span>
+            </div>
+            <span :class="['timer-component__timer', { active: timer.setIntervalInstance }]">{{ timer.value }}</span>
+            <div class="timer-component__buttons">
+                <div class="timer-component__button-wr" v-if="timer.setIntervalInstance" @click="stopTimer(timer)">
+                    <Button class="c-button--icon c-button--blue">
+                        <pause-icon />
+                    </Button>
+                </div>
+                <div class="timer-component__button-wr" v-else @click="runTimer(timer)">
+                    <Button class="c-button--icon c-button--green">
+                        <play-icon />
+                    </Button>
+                </div>
+                <div class="timer-component__button-wr" @click="removeTimer(timer)">
+                    <Button class="c-button c-button--red">
+                        <delete-icon />
+                    </Button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

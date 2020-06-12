@@ -1,0 +1,85 @@
+.timer-component {
+    &__timers {
+        padding-top: 30px;
+    }
+
+    &__timer-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 40px;
+    }
+
+    &__timer-name-container {
+        width: 145px;
+        padding: 0 10px;
+        text-align: left;
+        overflow-wrap: break-word;
+    }
+
+    &__timer-name {
+        color: #5586f2;
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+    &__timer {
+        min-width: 65px;
+        margin-left: 59px;
+        margin-right: 42px;
+        padding: 13px 24px;
+        background-color: rgba(255, 72, 118, 0.15);
+        border-radius: 6px;
+
+        &.active {
+            background-color: #e7e8ea;
+        }
+    }
+
+    &__timers-header {
+        border-bottom: 1px solid rgba(40, 43, 49, 0.16);
+        padding-bottom: 30px;
+        width: 100%;
+        text-align: center;
+
+        .c-button {
+            height: 40px;
+        }
+    }
+
+    &__buttons {
+        display: flex;
+
+        .c-button {
+            &:first-child {
+                margin-right: 20px;
+            }
+        }
+    }
+
+    @media (max-width: 600px) {
+        &__timers-form {
+            display: flex;
+            flex-direction: column;
+            padding: 0 30px;
+        }
+
+        &__timer {
+            margin-left: 0;
+            margin-right: 7px;
+            padding: 13px 8px;
+        }
+
+        &__buttons {
+            .c-button {
+                &:first-child {
+                    margin-right: 10px;
+                }
+            }
+        }
+
+        .c-input {
+            margin: 10px 0 15px 0;
+        }
+    }
+}

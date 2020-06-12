@@ -1,0 +1,44 @@
+.l-header {
+    &__wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 30px 0;
+        position: relative;
+    }
+
+    &__list {
+        margin: 0;
+    }
+
+    &__item {
+        display: inline-block;
+        padding: 0 20px;
+    }
+
+    &__link {
+        color: #fff;
+        font-size: 15px;
+        text-decoration: none;
+    }
+
+    &__title {
+        color: #fff;
+        font-weight: bold;
+        font-size: 20px;
+        text-decoration: none;
+    }
+
+    @media (max-width: 800px) {
+        &__desktop-menu,
+        &__title-container {
+            display: none;
+        }
+    }
+
+    @media (max-width: 600px) {
+        &__wrapper {
+            padding: 15px 0;
+        }
+    }
+}
